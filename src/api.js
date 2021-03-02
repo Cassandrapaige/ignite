@@ -20,7 +20,12 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-// Popular games
+// ROUTE URLS
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-rating&page_size=10`;
+const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
+// EXPORT ROUTE URLS
 export const popularGamesURL = () => `${BASE_URL}/${popular_games}`;
+export const upcomingGamesURL = () => `${BASE_URL}/${upcoming_games}`;
+export const newGamesURL = () => `${BASE_URL}/${new_games}`;
